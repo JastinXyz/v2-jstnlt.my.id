@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import Logo from "./dust/Logo";
 
@@ -22,6 +23,9 @@ export default function Navbar() {
           <Logo/>
         </div>
         <div className="navbar-end pr-5">
+          <Link href={'/guestbook'} className="mr-4 hover:underline transition">
+            Guestbook
+          </Link>
           <label className="swap swap-rotate">
             <input
               type="checkbox"

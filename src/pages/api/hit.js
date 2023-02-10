@@ -1,22 +1,22 @@
-import DatabaseConnection from "@/lib/DatabaseConnection";
-import Hit from "@/models/Hit";
+import clientPromise from "@/lib/DatabaseConnection";
 
 export default async function handler(req, res) {
   try {
-    await DatabaseConnection();
-
     let name = "counter";
-    let has = await Hit.exists({ name });
+    let client = await clientPromise;
+    let db = client.db();
+    let Hit = db.collection(name);
 
-    if (has) {
-      let get = await Hit.findOne({ name }).exec();
-      await Hit.updateOne({ name }, { hit: get.hit + 1 });
+    let has = await Hit.findOne({ name });
+
+    if(has) {
+      await Hit.findOneAndUpdate({ name }, { $inc: { hit: 1 }});
     } else {
-      const s = new Hit({ name, hit: 0 });
-      s.save();
+      await Hit.insertOne({ name, hit: 0 });
     }
 
-    let finale = await Hit.findOne({ name }, "-_id -__v").exec();
+    let finale = await Hit.findOne({ name });
+    delete finale._id;
     res.status(200).json(finale);
   } catch (err) {
     console.log("[ERROR /api/hit]", err);

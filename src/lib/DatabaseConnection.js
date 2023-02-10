@@ -1,24 +1,25 @@
-import mongoose from "mongoose";
-const MONGODB_URI = process.env.MONGODB_URI;
-let cached = global.mongoose;
+// This approach is taken from https://github.com/vercel/next.js/tree/canary/examples/with-mongodb
+import { MongoClient } from "mongodb";
 
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
+if (!process.env.MONGODB_URI) {
+  throw new Error('Invalid/Missing environment variable: "MONGODB_URI"');
 }
 
-export default async function DatabaseConnection() {
-  if (cached.conn) {
-    return cached.conn;
-  }
+const uri = process.env.MONGODB_URI;
+const options = {};
 
-  if (!cached.promise) {
-    mongoose.set("strictQuery", true);
-    mongoose.set("bufferCommands", false);
-    cached.promise = mongoose.connect(MONGODB_URI).then((mongoose) => {
-      return mongoose;
-    });
-  }
+let client;
+let clientPromise;
 
-  cached.conn = await cached.promise;
-  return cached.conn;
+if (process.env.NODE_ENV === "development") {
+  if (!global._mongoClientPromise) {
+    client = new MongoClient(uri, options);
+    global._mongoClientPromise = client.connect();
+  }
+  clientPromise = global._mongoClientPromise;
+} else {
+  client = new MongoClient(uri, options);
+  clientPromise = client.connect();
 }
+
+export default clientPromise;

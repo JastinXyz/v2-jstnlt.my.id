@@ -4,7 +4,6 @@ import Hero from '@/components/Hero'
 import Projects from '@/components/sections/Projects'
 import Contact from '@/components/sections/Contact'
 import Footer from '@/components/sections/Footer'
-import { useHotkeys } from 'react-hotkeys-hook'
 import ControlSlashModal from '@/components/dust/ControlSlashModal'
 import HotkeysInit from '@/components/HotkeysInit'
 
