@@ -6,6 +6,7 @@ export default function Navbar() {
     const [dark, setDark] = useState(false);
     useEffect(() => {
       let theme = localStorage.getItem("theme");
+      if(!theme) theme = "dark";
       if (!dark && theme === "light") {
         document.querySelector("#sunIcon").classList.remove("swap-on");
         document.querySelector("#sunIcon").classList.add("swap-off");
