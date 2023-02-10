@@ -12,6 +12,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>JstnLT — Home</title>
+      </Head>
       <Navbar />
       <main>
         <Hero />

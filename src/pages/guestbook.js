@@ -1,4 +1,4 @@
-import { useSession, signIn, signOut, getProviders } from "next-auth/react";
+import { signIn, signOut, getProviders } from "next-auth/react";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "./api/auth/[...nextauth]";
 import ControlSlashModal from '@/components/dust/ControlSlashModal';
@@ -12,9 +12,9 @@ import GetGuestbook from "@/lib/GetGuestbook";
 import ToReadable from "@/lib/ToReadable";
 import Twemoji from "react-twemoji";
 import { useState } from "react";
+import Head from "next/head";
 
 export default function Component(data) {
-//   const { data: session } = useSession();
   let [gb, setGB] = useState(data.guestbook);
   const formSubmit = async (e) => {
     e.preventDefault();
@@ -44,6 +44,9 @@ export default function Component(data) {
 
   return (
     <>
+      <Head>
+        <title>JstnLT — Home</title>
+      </Head>
       <Toaster />
       <Navbar />
 
