@@ -45,6 +45,7 @@ export default function Component(data) {
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>JstnLT — Guestbook</title>
       </Head>
       <Toaster />

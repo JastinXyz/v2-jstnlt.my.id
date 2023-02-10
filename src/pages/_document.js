@@ -4,8 +4,6 @@ export default function Document() {
   return (
     <Html lang="en" data-theme="dark">
       <Head>
-        <html data-theme="dark" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="a software engineering student who loves to code."

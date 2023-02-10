@@ -25,6 +25,7 @@ module.exports = {
       "light",
       {
         dark: {
+          'color-scheme': 'dark',
           primary: "#1d4ed8",
           secondary: "#7c3aed",
           accent: "#14b8a6",
