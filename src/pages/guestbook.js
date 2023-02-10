@@ -45,7 +45,7 @@ export default function Component(data) {
   return (
     <>
       <Head>
-        <title>JstnLT — Home</title>
+        <title>JstnLT — Guestbook</title>
       </Head>
       <Toaster />
       <Navbar />
