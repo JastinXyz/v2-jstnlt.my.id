@@ -94,6 +94,7 @@ export default function Component(data) {
                               className="input input-bordered w-full max-w-xs"
                               maxLength="150"
                               name="content"
+                              required
                             />
                             <button
                               id="btnSubmit"
