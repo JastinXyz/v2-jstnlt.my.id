@@ -5,10 +5,6 @@ export default function ControlSlashModal() {
         kbd: ["ctrl", "/"],
       },
       {
-        name: "Toggle theme",
-        kbd: ["ctrl", "m"],
-      },
-      {
         name: "Random projects",
         kbd: ["."]
       }
@@ -22,12 +18,12 @@ export default function ControlSlashModal() {
         />
         <label htmlFor="controlslashmodal" className="modal cursor-pointer">
           <label className="modal-box relative" htmlFor="">
-            <h3 className="text-lg font-bold">Hello World!</h3>
+            <h3 className="text-[#F5FEFD] font-bold">Hello World!</h3>
             <div className="grid grid-cols-3 text-xs py-4">
               {hotkeys.map((x, idx) => {
                 return (
                   <div key={idx} className="p-2">
-                    <h4 className="text-base">{x.name}</h4>
+                    <h4 className="text-base text-[#F5FEFD]">{x.name}</h4>
                     {x.kbd.map((xx, idxx, row) => {
                      return (
                        <span key={idxx}>
