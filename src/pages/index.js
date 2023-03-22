@@ -8,8 +8,6 @@ import ControlSlashModal from '@/components/dust/ControlSlashModal'
 import HotkeysInit from '@/components/HotkeysInit'
 
 export default function Home() {
-
-
   return (
     <>
       <Head>

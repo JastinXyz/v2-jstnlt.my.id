@@ -9,7 +9,7 @@ const outfit = Outfit({ weight: ['500'], subsets: ['latin'] });
 export default function App({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <main className={outfit.className}>
-      <NextNProgress />
+      <NextNProgress color='#10F5CC' />
       <SessionProvider session={session}>
         <Component {...pageProps} />
         <Analytics />

@@ -12,24 +12,21 @@ export default function Projects() {
     <>
       <section id="projects" className="pt-52 px-6">
         <h1 className="text-2xl font-bold text-center">
-          Some of My Projects
+          <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-primary relative inline-block"><span class="relative text-neutral">Some of My Projects</span></span>
         </h1>
-        <div className="flex justify-center">
-          <div className="bg-[#6C63FF] w-[150px] h-[5px]"></div>
-        </div>
         <div className="md:px-28 mt-20">
           <Tab.Group>
-            <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
+            <Tab.List className="flex space-x-1 rounded-xl bg-neutral p-1">
               {Object.keys(categories).map((category) => (
                 <Tab
                   key={category}
                   className={({ selected }) =>
                     clsx(
-                      "w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700",
-                      "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
+                      "w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-neutral",
+                      "ring-primary ring-opacity-60 ring-offset-2 ring-offset-primary focus:outline-none focus:ring-2",
                       selected
-                        ? "bg-white shadow"
-                        : "dark:text-blue-100 text-black hover:bg-white/[0.12] hover:text-white"
+                        ? "bg-primary shadow"
+                        : "dark:text-[#F5FEFD] hover:bg-white/[0.12]"
                     )
                   }
                 >
@@ -41,10 +38,10 @@ export default function Projects() {
               {Object.values(categories).map((projects, idx) => (
                 <Tab.Panel
                   key={idx}
-                  className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2"
+                  className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[29px] mt-[29px]"
                 >
                   {projects.map(
-                    ({ name, description, isLeft, link, icon, image }) => (
+                    ({ name, description, link, icon, image }) => (
                       <Fragment key={name}>
                         <div className="flex justify-center z-[999]">
                           <a
@@ -54,20 +51,20 @@ export default function Projects() {
                             rel="noopener noreferrer"
                           >
                             <div
-                              className="card max-w-md bg-base-100 shadow-xl image-full w-full h-full overflow-hidden"
+                              className="card max-w-md bg-base-100 shadow-xl image-full w-full h-full overflow-hidden rounded-3xl"
                               data-aos="fade-up"
                             >
                               <figure>
                                 <Image {...image} />
                               </figure>
-                              <div className="card-body rounded-md">
-                                <h2 className="card-title">
+                              <div className="card-body">
+                                <h2 className="flex items-center gap-[0.5rem] font-semibold text-[20px] text-[#F5FEFD]">
                                   <icon.name
                                     className={`${icon.fill} transition ease-in-out delay-150`}
                                   />
                                   {name}
                                 </h2>
-                                <p>{description}</p>
+                                <p className={'text-[#F5FEFD] ' + (description.length > 80 ? 'text-sm 2xl:text-base' : '')}>{description}</p>
                               </div>
                             </div>
                           </a>

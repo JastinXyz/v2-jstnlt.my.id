@@ -22,19 +22,13 @@ module.exports = {
   },
   daisyui: {
     themes: [
-      "light",
       {
         dark: {
           'color-scheme': 'dark',
-          primary: "#1d4ed8",
-          secondary: "#7c3aed",
-          accent: "#14b8a6",
-          neutral: "#1f2937",
-          "base-100": "#0F1117",
-          info: "#0ea5e9",
-          success: "#4ade80",
-          warning: "#facc15",
-          error: "#F87272",
+          primary: "#10F5CC",
+          neutral: "#3A4F52",
+          "base-100": "#1B2326",
+          "white2": "#F5FEFD",
         },
       },
     ],

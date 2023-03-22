@@ -20,7 +20,8 @@ export default function GetProjects() {
           image: {
             src: "/img/projects/open/siswa-crud.webp",
             alt: "Siswa CRUD",
-            layout: "fill",
+            width: 465,
+            height: 285
           },
         },
         {
@@ -35,7 +36,8 @@ export default function GetProjects() {
           image: {
             src: "/img/projects/open/sengkalan.webp",
             alt: "sengkalan.js npm preview",
-            layout: "fill",
+            width: 465,
+            height: 285
           },
         },
         {
@@ -50,7 +52,8 @@ export default function GetProjects() {
           image: {
             src: "/img/projects/open/dcweb.webp",
             alt: "Discord Bot Landing Page",
-            layout: "fill",
+            width: 465,
+            height: 285
           },
         },
         {
@@ -65,7 +68,8 @@ export default function GetProjects() {
           image: {
             src: "/img/projects/open/rps.webp",
             alt: "Simple RPS",
-            layout: "fill",
+            width: 465,
+            height: 285
           },
         },
         {
@@ -80,7 +84,8 @@ export default function GetProjects() {
           image: {
             src: "/img/projects/open/wcode.webp",
             alt: "whatscode.js logo",
-            layout: "fill",
+            width: 465,
+            height: 285
           },
         },
         {
@@ -95,7 +100,8 @@ export default function GetProjects() {
           image: {
             src: "/img/projects/open/gempabot.webp",
             alt: "gempa bot",
-            layout: "fill",
+            width: 465,
+            height: 285
           },
         },
         {
@@ -109,7 +115,8 @@ export default function GetProjects() {
           image: {
             src: "/img/projects/open/whatsactyl.webp",
             alt: "whatsactyl preview",
-            layout: "fill",
+            width: 465,
+            height: 285
           },
         },
         {
@@ -124,7 +131,8 @@ export default function GetProjects() {
           image: {
             src: "/img/projects/open/simpleportfolio.webp",
             alt: "simpleportfolio preview",
-            layout: "fill",
+            width: 465,
+            height: 285
           },
         },
         {
@@ -138,7 +146,8 @@ export default function GetProjects() {
           image: {
             src: "/img/projects/open/jstnltv1.webp",
             alt: "v1 website preview",
-            layout: "fill",
+            width: 465,
+            height: 285
           },
         },
         {
@@ -153,7 +162,8 @@ export default function GetProjects() {
           image: {
             src: "/img/projects/open/ckptw.webp",
             alt: "ckptw docs",
-            layout: "fill",
+            width: 465,
+            height: 285
           },
         },
       ],
@@ -170,7 +180,8 @@ export default function GetProjects() {
           image: {
             src: "/img/projects/closed/betterbanyumas.webp",
             alt: "betterbanyumas preview",
-            layout: "fill",
+            width: 465,
+            height: 285
           },
         },
         {
@@ -184,7 +195,8 @@ export default function GetProjects() {
           image: {
             src: "/img/projects/closed/mengkodingan.webp",
             alt: "mengkodingan preview",
-            layout: "fill",
+            width: 465,
+            height: 285
           },
         },
       ],

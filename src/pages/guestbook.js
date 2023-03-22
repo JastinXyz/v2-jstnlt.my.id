@@ -46,17 +46,19 @@ export default function Component(data) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>JstnLT — Guestbook</title>
+        <title>JstnLT — 📚 Guestbook</title>
       </Head>
       <Toaster />
       <Navbar />
 
-      <div className="mb-16">
+      <div className="mb-16 text-[#F5FEFD] bg-base-100">
         <div className="grid grid-cols-1 md:grid-cols-2 px-6">
           <div className="pt-32 px-4">
-            <h1 className="text-4xl font-extrabold leading-10 tracking-tight text-left text-base-900 sm:leading-none md:text-3xl lg:text-4xl">
-              <Twemoji options={{ className: "twemoji" }}>📚 Guestbook</Twemoji>
-            </h1>
+            <h1 className="text-3xl font-bold leading-[50px] text-left text-[#F5FEFD] sm:leading-none">
+                <span className="inline md:block">
+                  <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-primary relative inline-block"><span class="relative text-neutral flex items-center gap-[0.5rem]">Guestbook</span></span>
+                </span>
+              </h1>
 
             <p className="md:inline-block mt-2">
               Hello! I don't know what to write in this description, You should
@@ -73,7 +75,7 @@ export default function Component(data) {
                     ? Object.values(providers).map((provider) => (
                         <div key={provider.name} className="sm:px-0 px-2">
                           <button
-                            className="btn btn-wide"
+                            className="btn btn-wide normal-case font-normal"
                             onClick={() => signIn(provider.id)}
                           >
                             <FaGithub className="mr-2 w-5 h-5" />
@@ -98,14 +100,14 @@ export default function Component(data) {
                             />
                             <button
                               id="btnSubmit"
-                              className="btn rounded-xl btn-primary dark:btn-secondary"
+                              className="btn rounded-xl btn-primary dark:btn-secondary normal-case font-normal"
                             >
                               Sign
                             </button>
                           </div>
                         </form>
                         <button
-                          className="btn rounded-xl btn-error"
+                          className="btn rounded-xl btn-error normal-case font-normal"
                           onClick={() => signOut()}
                         >
                           Sign Out
@@ -129,7 +131,7 @@ export default function Component(data) {
                       {gb.map((x, idx) => {
                         return (
                           <div key={idx} className="mt-4">
-                            <p className="text-lg font-bold">{x.content}</p>
+                            <p className="text-lg font-semibold">{x.content}</p>
                             <p className="text-sm">
                               — By {x.user.name} · Posted on{" "}
                               {ToReadable(x.timestamp)}
