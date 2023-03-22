@@ -7,7 +7,15 @@ export default function ControlSlashModal() {
       {
         name: "Random projects",
         kbd: ["."]
-      }
+      },
+      {
+        name: "Guestbook",
+        kbd: ["g"]
+      },
+      {
+        name: "Redirect to Home",
+        kbd: ["h"]
+      },
     ];
     return (
       <>

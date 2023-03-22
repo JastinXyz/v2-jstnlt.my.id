@@ -1,8 +1,10 @@
 import GetProjects from "@/lib/GetProjects";
+import { useRouter } from "next/router";
 import { useHotkeys } from "react-hotkeys-hook";
 
 export default function HotkeysInit() {
     let projects = GetProjects();
+    let router = useRouter();
 
     useHotkeys("ctrl+/", () => {
         let isChecked = document.getElementById("controlslashmodal");
@@ -15,6 +17,14 @@ export default function HotkeysInit() {
       const r = OpenClosed[Math.floor(Math.random() * OpenClosed.length)];
 
       window.open(r.link);
+    });
+
+    useHotkeys("g", () => {
+      router.push('/guestbook');
+    });
+
+    useHotkeys("h", () => {
+      router.push('/');
     });
 
     return;
