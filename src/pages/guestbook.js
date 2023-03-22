@@ -100,7 +100,7 @@ export default function Component(data) {
                             />
                             <button
                               id="btnSubmit"
-                              className="btn rounded-xl btn-primary dark:btn-secondary normal-case font-normal"
+                              className="btn rounded-xl btn-primary normal-case font-normal"
                             >
                               Sign
                             </button>
