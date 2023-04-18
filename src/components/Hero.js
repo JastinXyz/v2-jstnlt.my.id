@@ -2,7 +2,6 @@ import sAge from "s-age";
 import Social from "./dust/Social";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Wakatime from "@/lib/Wakatime";
 import Repository from "@/lib/Repository";
 import GetHit from "@/lib/GetHit";
 import { Toaster } from "react-hot-toast";
@@ -10,16 +9,14 @@ import Twemoji from "react-twemoji";
 
 export default function Hero() {
     let umur = sAge("Nov 16 2007");
-    let [props, setProps] = useState({ wakatime: 'fetching...', repository: 'fetching...', hit: 'fetching...' });
+    let [props, setProps] = useState({ repository: 'fetching...', hit: 'fetching...' });
 
     useEffect(() => {
       async function fetchData() {
         let repository = await Repository();
-        setProps({ wakatime: 'fetching...', repository, hit: 'fetching...' });
+        setProps({ repository, hit: 'fetching...' });
         let hit = await GetHit();
         setProps({ wakatime: 'fetching...', repository, hit });
-        let wakatime = await Wakatime();
-        setProps({ wakatime, repository, hit });
       }
 
       fetchData();
@@ -47,7 +44,7 @@ export default function Hero() {
               </p>
               <p className="md:inline-block mt-2 text-[#F5FEFD] font-medium">
                 A little biography, my full name is Jastin Linggar Tama. Lives
-                in Purwokerto, Indonesia. Since 1st January 2023 I spent <code className="text-primary">{props.wakatime}</code> coding. I
+                in Purwokerto, Indonesia. I
                 have created a total of <code className="text-primary">{props.repository}</code> public repositories in my Github account.
               </p>
               <p className="md:inine-block mt-2 text-[#F5FEFD] font-medium">
